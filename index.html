@@ -3,104 +3,167 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi coleccion de waifus</title>
+    <meta
+      property="og:image"
+      content="https://e7.pngegg.com/pngimages/524/662/png-clipart-woman-s-face-illustration-rocket-league-video-game-twitch-vrchat-ahegao-game-monochrome-thumbnail.png"
+    />
+    <title>Mi colección de waifus</title>
 
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <!-- Google Fonts: Dancing Script -->
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
       rel="stylesheet"
     />
 
     <style>
-      /* Colores personalizados */
       :root {
         --azul-noche: #000000;
         --amarillo-patito: #ffdc5e;
-        --blanco-suave: #e9e9e9;
+        --blanco-suave: #f4f4f4;
       }
 
       body {
         background-color: var(--blanco-suave);
+        font-family: Arial, sans-serif;
       }
 
-      /* Logo */
+      /* Navbar */
       .logo {
         font-family: "Dancing Script", cursive;
         font-size: 1.8rem;
         color: var(--amarillo-patito);
         font-weight: 700;
       }
-
       .logo:hover {
         color: #e9e9e9 !important;
       }
-
-      /* Navbar links */
+      .navbar-custom {
+        background-color: var(--azul-noche);
+      }
       .nav-link {
         color: var(--amarillo-patito) !important;
         font-weight: 500;
       }
-
       .nav-link:hover {
         color: #e9e9e9 !important;
       }
 
-      /* Navbar fondo */
-      .navbar-custom {
-        background-color: var(--azul-noche);
-      }
-
-      /* Botón hamburguesa personalizado */
-      .navbar-toggler {
-        border-color: var(--amarillo-patito);
-      }
-
-      .navbar-toggler .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFDC5E' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-      }
-
-      .heroCarousel {
-        background-color: var(--azul-noche);
+      /* Carrusel */
+      .heroCarousel .carousel-item img {
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
       }
       .carousel-caption h2 {
-        border-radius: 2rem;
-        text-align: center;
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: bold;
-
-        background-color: rgba(255, 255, 255, 0.6); /* muy transparente */
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 12px;
+        padding: 10px;
+        color: #000;
       }
       .carousel-caption p {
-        border-radius: 1rem;
-        text-align: center;
-        font-size: 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        padding: 8px;
         font-weight: bold;
-
-        color: #e9e9e9;
-        background-color: rgba(0, 0, 0, 0.6); /* muy transparente */
+        color: #fff;
       }
 
-      .heroCarousel .carousel-item img {
-        max-height: 400px; /* ajusta la altura que quieras */
-        object-fit: cover; /* mantiene proporción y recorta si es necesario */
-      }
-
+      /* Tabs */
       #mesesTab .nav-link {
-        background-color: white; /* fondo blanco */
-        color: black !important; /* color del texto */
-        border-radius: 5px; /* opcional, bordes redondeados */
-        margin-right: 5px; /* separación entre tabs */
+        background: #fff;
+        color: #000 !important;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+      #mesesTab .nav-link.active {
+        background: var(--azul-noche);
+        color: var(--amarillo-patito) !important;
       }
 
-      #mesesTab .nav-link.active {
-        background-color: black; /* color del tab activo */
-        color: var(--amarillo-patito) !important;
+      /* Ranking */
+      .ganador img {
+        border: 5px solid gold;
+        border-radius: 15px;
+        animation: pulse 1.5s infinite;
+        max-height: 350px;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0px gold;
+        }
+        50% {
+          box-shadow: 0 0 20px gold;
+        }
+        100% {
+          box-shadow: 0 0 0px gold;
+        }
+      }
+
+      /* Tabla */
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 20px auto;
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background-color: var(--azul-noche);
+        color: var(--amarillo-patito);
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      td img {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+      }
+
+      /* Cards */
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 30px auto;
+        gap: 20px;
+        max-width: 1000px;
+      }
+      .cardTab {
+        background: #fff;
+        width: 160px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.2s;
+      }
+      .cardTab img {
+        width: 100px;
+        height: 100px;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+      .cardTab:hover {
+        transform: scale(1.05);
+      }
+      .cardTab p {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #333;
       }
     </style>
   </head>
@@ -111,97 +174,78 @@
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img
             src="https://e7.pngegg.com/pngimages/524/662/png-clipart-woman-s-face-illustration-rocket-league-video-game-twitch-vrchat-ahegao-game-monochrome-thumbnail.png"
-            alt="I.E.P. Mi Jesús"
+            alt="logo"
             width="50"
             height="50"
             class="me-2"
           />
           <span class="logo">Miwaifu.cum</span>
         </a>
-
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="#inicio">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#nosotros">Debates</a>
+              <a class="nav-link" href="#debates">Debates</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contacto">Noticias</a>
+              <a class="nav-link" href="#noticias">Noticias</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contacto">Registrate</a>
+              <a class="nav-link" href="#registro">Regístrate</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <section class="heroCarousel">
+    <!-- Carrusel -->
+    <section class="heroCarousel my-4">
       <div class="container">
         <div
           id="miCarrusel"
-          class="carousel carousel-dark slide"
+          class="carousel slide"
           data-bs-ride="carousel"
-          data-bs-interval="5000"
+          data-bs-interval="4000"
         >
           <div class="carousel-inner">
             <div class="carousel-item active text-center">
               <img
                 src="https://64.media.tumblr.com/c283fd300f4941b2799cce98c3dbf505/bae7fc025172ef79-03/s500x750/9867fab37f3dfc053ef0b535cfb0aa19b6efa878.gif"
                 class="d-block w-100"
-                alt="Imagen 1"
               />
               <div class="carousel-caption d-none d-md-block">
-                <h2>
-                  Bienvenidos al espacio donde podrás compartir tus waifus y
-                  sustentar por qué es la mejor..
-                </h2>
-                <p>
-                  "Ayudamos a compartir y valorar tus waifus, destacando sus
-                  cualidades y razones por las que son las mejores."
-                </p>
+                <h2>Bienvenidos al espacio para tus waifus</h2>
+                <p>Comparte, valora y debate quién es la mejor ✨</p>
               </div>
             </div>
             <div class="carousel-item text-center">
               <img
                 src="https://64.media.tumblr.com/5f4661d11a1eb29046944f7fa037188e/ef16c9773f487d4a-c4/s1280x1920/c6315e430dc4b603e174a4fff4b99b2071208253.gif"
                 class="d-block w-100"
-                alt="Imagen 2"
               />
               <div class="carousel-caption d-none d-md-block">
                 <h2>Comparte tus comentarios</h2>
-                <p>
-                  "Fomentamos una comunidad donde puedes expresar tus opiniones
-                  y descubrir nuevas perspectivas sobre las waifus."
-                </p>
+                <p>Descubre nuevas perspectivas de la comunidad</p>
               </div>
             </div>
             <div class="carousel-item text-center">
               <img
                 src="https://i.pinimg.com/originals/36/2f/fa/362ffa83025d4e50d9466b58f7f3524a.gif"
                 class="d-block w-100"
-                alt="Imagen 3"
               />
               <div class="carousel-caption d-none d-md-block">
-                <h2>Encuentra tus nuevas waifus y debate con los papus :V</h2>
-                <p>
-                  "En nuestra web podras fundamentar y compartir por qué tu
-                  waifu es la mejor."
-                </p>
+                <h2>Encuentra nuevas waifus 💖</h2>
+                <p>Debate con los papus :V</p>
               </div>
             </div>
           </div>
@@ -214,7 +258,6 @@
             data-bs-slide="prev"
           >
             <span class="carousel-control-prev-icon"></span>
-            <span class="visually-hidden">Anterior</span>
           </button>
           <button
             class="carousel-control-next"
@@ -223,257 +266,107 @@
             data-bs-slide="next"
           >
             <span class="carousel-control-next-icon"></span>
-            <span class="visually-hidden">Siguiente</span>
           </button>
-
-          <!-- Indicadores -->
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#miCarrusel"
-              data-bs-slide-to="0"
-              class="active"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#miCarrusel"
-              data-bs-slide-to="1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#miCarrusel"
-              data-bs-slide-to="2"
-            ></button>
-          </div>
         </div>
       </div>
     </section>
 
+    <!-- Ranking -->
     <section class="ranking my-5">
       <div class="container">
-        <h2 class="mb-4 text-center">Las waifus mas populares de cada mes</h2>
+        <h2 class="mb-4 text-center">Las waifus más populares</h2>
 
         <!-- Tabs -->
         <ul class="nav nav-tabs" id="mesesTab" role="tablist">
-          <li class="nav-item" role="presentation">
+          <li class="nav-item">
             <button
               class="nav-link active"
-              id="enero-tab"
               data-bs-toggle="tab"
               data-bs-target="#enero"
-              type="button"
-              role="tab"
-              aria-controls="enero"
-              aria-selected="true"
             >
               Enero
             </button>
           </li>
-          <li class="nav-item" role="presentation">
+          <li class="nav-item">
             <button
               class="nav-link"
-              id="febrero-tab"
               data-bs-toggle="tab"
               data-bs-target="#febrero"
-              type="button"
-              role="tab"
-              aria-controls="febrero"
-              aria-selected="false"
             >
               Febrero
             </button>
           </li>
-          <li class="nav-item" role="presentation">
+          <li class="nav-item">
             <button
               class="nav-link"
-              id="marzo-tab"
               data-bs-toggle="tab"
               data-bs-target="#marzo"
-              type="button"
-              role="tab"
-              aria-controls="marzo"
-              aria-selected="false"
             >
               Marzo
             </button>
           </li>
         </ul>
 
-        <!-- Tab content -->
-        <div class="tab-content p-4 border border-top-0" id="mesesTabContent">
-          <div
-            class="tab-pane fade show active"
-            id="enero"
-            role="tabpanel"
-            aria-labelledby="enero-tab"
-          >
+        <div class="tab-content p-4 border border-top-0">
+          <!-- Enero -->
+          <div class="tab-pane fade show active" id="enero">
             <h3 class="text-center mb-4">Primer puesto</h3>
-
-            <!-- Imagen principal centrada con efecto ganador -->
             <div class="text-center mb-5 ganador">
               <img
                 src="https://64.media.tumblr.com/c283fd300f4941b2799cce98c3dbf505/bae7fc025172ef79-03/s500x750/9867fab37f3dfc053ef0b535cfb0aa19b6efa878.gif"
-                class="img-fluid rounded"
                 alt="Ganador"
-                style="max-height: 400px"
               />
-              <h4 class="mt-3">Marin la sucia Kitagawa</h4>
+              <h4 class="mt-3">Marin Kitagawa</h4>
             </div>
 
-            <style>
-              .ganador img {
-                border: 5px solid gold; /* borde dorado */
-                border-radius: 15px;
-                animation: pulse 1.5s infinite;
-              }
+            <!-- Tabla dinámica -->
+            <table id="rankingTable">
+              <thead>
+                <tr>
+                  <th>Puesto</th>
+                  <th>Nombre</th>
+                  <th>Imagen</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
 
-              /* Animación de pulso */
-              @keyframes pulse {
-                0% {
-                  box-shadow: 0 0 0px gold;
-                }
-                50% {
-                  box-shadow: 0 0 20px gold;
-                }
-                100% {
-                  box-shadow: 0 0 0px gold;
-                }
-              }
-            </style>
-
-            <!-- Galería de cards -->
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-              <!-- Card 1 -->
-              <div class="col">
-                <div class="card h-100 text-center">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/469712698427572238/1413371756663803904/image.png?ex=68c44245&is=68c2f0c5&hm=4180b0a89342fb88585e048ea6654d96ee3c7fb8fbce3ef09ee44e29f4aac4d3&"
-                    class="card-img-top"
-                    alt="Imagen 1"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Goldo sexy</h5>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 2 -->
-              <div class="col">
-                <div class="card h-100 text-center">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/469712698427572238/1415169994345680957/40fbfc6c-2d7a-4fd6-b2e9-0d744690c3c7.png?ex=68c43583&is=68c2e403&hm=be3c8d095b55f207ae222633ccd4b6c715b3c6295ad43a77c37cc81ee26db566&"
-                    class="card-img-top"
-                    alt="Imagen 2"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Rubia lolicona :v</h5>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 3 -->
-              <div class="col">
-                <div class="card h-100 text-center">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/469712698427572238/1412659881088913429/3c1b645a-5291-4097-ab8d-76cb6f055315.png?ex=68c44e49&is=68c2fcc9&hm=8a6aa5bca6e9696d0350b7fdfe1083b8c9cd3b58e67d5d354a5bf18348ffbc1d&"
-                    class="card-img-top"
-                    alt="Imagen 3"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Pelirosada friendzoneada</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="tab-pane fade"
-            id="febrero"
-            role="tabpanel"
-            aria-labelledby="enero-tab"
-          >
-            <h3 class="text-center mb-4">Primer puesto</h3>
-
-            <!-- Imagen principal centrada -->
-            <div class="text-center mb-5">
-              <img
-                src="https://64.media.tumblr.com/c283fd300f4941b2799cce98c3dbf505/bae7fc025172ef79-03/s500x750/9867fab37f3dfc053ef0b535cfb0aa19b6efa878.gif"
-                class="img-fluid rounded"
-                alt="Ganador"
-                style="max-height: 400px"
-              />
-              <h4 class="mt-3">Marin la sucia Kitagawa</h4>
-            </div>
-
-            <!-- Galería de cards -->
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-              <!-- Card 1 -->
-              <div class="col">
-                <div class="card h-100 text-center">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/469712698427572238/1413371756663803904/image.png?ex=68c44245&is=68c2f0c5&hm=4180b0a89342fb88585e048ea6654d96ee3c7fb8fbce3ef09ee44e29f4aac4d3&"
-                    class="card-img-top"
-                    alt="Imagen 1"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Goldo sexy</h5>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 2 -->
-              <div class="col">
-                <div class="card h-100 text-center">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/469712698427572238/1415169994345680957/40fbfc6c-2d7a-4fd6-b2e9-0d744690c3c7.png?ex=68c43583&is=68c2e403&hm=be3c8d095b55f207ae222633ccd4b6c715b3c6295ad43a77c37cc81ee26db566&"
-                    class="card-img-top"
-                    alt="Imagen 2"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Rubia lolicona :v</h5>
-                  </div>
-                </div>
-              </div>
-              <!-- Card 3 -->
-              <div class="col">
-                <div class="card h-100 text-center">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/469712698427572238/1412659881088913429/3c1b645a-5291-4097-ab8d-76cb6f055315.png?ex=68c44e49&is=68c2fcc9&hm=8a6aa5bca6e9696d0350b7fdfe1083b8c9cd3b58e67d5d354a5bf18348ffbc1d&"
-                    class="card-img-top"
-                    alt="Imagen 3"
-                  />
-                  <div class="card-body">
-                    <h5 class="card-title">Pelirosada friendzoneada</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <!-- Tarjetas dinámicas -->
+            <div class="cards-container" id="cardsContainer"></div>
           </div>
         </div>
       </div>
     </section>
 
     <script>
-      // Inicializar carousel
-      const carousel = new bootstrap.Carousel("#heroCarousel", {
-        interval: 1000, // 1 segundo
-        wrap: true,
-      });
+      const csvUrl =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRl0dN0irHrIsXDekNVigZURz2VgdHlOAbUHtyfYIC2r0p4Jm80LbIJP7RR_nPytuSazBIjdW9dQvnw/pub?output=csv";
 
-      const buttons = document.querySelectorAll(".carousel-buttons button");
+      fetch(csvUrl)
+        .then((res) => res.text())
+        .then((csvText) => {
+          const rows = csvText.split("\n");
+          rows.shift(); // quitar encabezados
+          const tbody = document.querySelector("#rankingTable tbody");
+          const cardsContainer = document.getElementById("cardsContainer");
 
-      function updateButtons(index) {
-        buttons.forEach((btn) => btn.classList.remove("active"));
-        buttons[index].classList.add("active");
-      }
+          rows.forEach((row, index) => {
+            const cols = row.split(",");
+            if (cols.length >= 3) {
+              // Tabla (todas las filas)
+              const tr = document.createElement("tr");
+              tr.innerHTML = `<td>${cols[0]}</td><td>${cols[1]}</td><td><img src="${cols[2]}" alt="${cols[1]}"></td>`;
+              tbody.appendChild(tr);
 
-      buttons.forEach((btn, i) => {
-        btn.addEventListener("click", () => {
-          carousel.to(i);
-        });
-      });
-
-      document
-        .querySelector("#heroCarousel")
-        .addEventListener("slid.bs.carousel", (e) => {
-          updateButtons(e.to);
+              // Cards (saltar la primera fila)
+              if (index > 0) {
+                const card = document.createElement("div");
+                card.className = "cardTab";
+                card.innerHTML = `<img src="${cols[2]}" alt="${cols[1]}"><p>${cols[1]}</p>`;
+                cardsContainer.appendChild(card);
+              }
+            }
+          });
         });
     </script>
 
